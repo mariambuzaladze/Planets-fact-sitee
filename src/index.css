@@ -7,3 +7,9 @@
   box-sizing: border-box;
   font-family: "League Spartan";
 }
+
+#root{
+  min-height: 100vh;
+  background-color: #070724;
+  padding: 24px;
+}

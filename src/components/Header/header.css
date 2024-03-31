@@ -1,0 +1,18 @@
+header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1{
+    font-family: Antonio;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -1.05px;
+    color: #fff;
+}
+
+.hamburger{
+    opacity: 0.25;
+}
