@@ -1,0 +1,84 @@
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+}
+
+.filters{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.filter-text{
+    opacity: 0.5;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1.93px;
+    color: #fff;
+}
+
+.planetImg{
+    width: 111px;
+    height: 111px;
+}
+
+h2{
+    font-family: Antonio;
+    font-size: 40px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.description{
+    font-size: 11px;
+    line-height: 2;
+    color: #fff;
+    opacity: 0.5;
+    text-align: center;
+}
+
+.source{
+    font-size: 12px;
+    line-height: 2.08;
+    color: #fff;
+    opacity: 0.3;
+}
+
+a{
+    color: #fff;
+    font-weight: bold;
+}
+
+.containers{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 13px;
+}
+
+.text{
+    font-size: 8px;
+    font-weight: bold;
+    line-height: 2;
+    letter-spacing: 0.73px;
+    color: #fff;
+    opacity: 0.4;
+}
+
+.numbers{
+    font-weight: 500;
+    letter-spacing: -0.75px;
+    color: #fff;
+}
