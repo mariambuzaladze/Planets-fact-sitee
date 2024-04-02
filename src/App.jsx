@@ -13,11 +13,7 @@ function App() {
   return (
     <>
     <Header setPlanetClicked={setPlanetClicked} planetClicked={planetClicked}/>
-    {planetClicked===false?<PlanetsList planets={Data} setPlanetClicked={setPlanetClicked}/>:<PlanetInfo planet={Data[planetClicked-1]} description={description} setDescription={setDescription}/>}
-    
-    
-    {/* <PlanetInfo id={planetClicked} planets={Data}/> */}
-    {/* <PlanetsList planets={Data} setPlanetClicked={setPlanetClicked}/> */}
+    {planetClicked===false?<PlanetsList planets={Data} setPlanetClicked={setPlanetClicked}/>:<PlanetInfo planet={Data[planetClicked-1]} description={description} setDescription={setDescription} planets={Data} setPlanetClicked={setPlanetClicked}/>}
     </>
   )
 }

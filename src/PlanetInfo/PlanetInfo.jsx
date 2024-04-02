@@ -1,7 +1,7 @@
 import "./planetInfo.css";
 import Source from "/images/icon-source.svg"
 
-export default function PlanetInfo({planet,description,setDescription}){
+export default function PlanetInfo({planet,description,setDescription,planets,setPlanetClicked}){
     const handleOverview = ()=>{
         setDescription("overview")
     }
@@ -47,18 +47,34 @@ export default function PlanetInfo({planet,description,setDescription}){
         }
     }
 
-    
+    const getPlanetNames = () =>{
+        return planets.map((planet)=>{
+            return <p onClick={() => handleNameClick(planet.id)} key={planet.id} className="planet-name">{planet.name}</p>
+        })
+    }
+    const handleNameClick = (id) => {
+        setPlanetClicked(id)
+    }
     return <div className="info">
+        <div className="planet-names-div">{getPlanetNames()}</div>
+
         <div className="filters">
             <p style={description==="overview"?{"borderBottom":"4px solid #419ebb"}:{}} onClick={handleOverview} className="filter-text">OVERVIEW</p>
             <p style={description==="structure"?{"borderBottom":"4px solid #419ebb"}:{}} onClick={handleStructure}className="filter-text">STRUCTURE</p>
             <p style={description==="surface"?{"borderBottom":"4px solid #419ebb"}:{}} onClick={handleSurface}className="filter-text">SURFACE</p>
         </div>
 
-        <img className="planetImg" src={getImage()} alt="planet image" />
-        <h2>{planet.name}</h2>
-        <p className="description">{getDescription()}</p>
-        <p className="source">Source : <a href={getSources()}>Wikipedia</a><img src={Source} alt="icon source" /></p>
+        <div className="content">
+            <img className="planetImg" src={getImage()} alt="planet image" />
+
+            <div className="text-div">
+                <h2>{planet.name}</h2>
+                <p className="description">{getDescription()}</p>
+                <p className="source">Source : <a href={getSources()}>Wikipedia</a><img src={Source} alt="icon source" /></p>
+            </div>
+        </div>
+        
+        
 
          
         <div className="containers">

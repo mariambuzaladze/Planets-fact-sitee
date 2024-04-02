@@ -5,6 +5,20 @@
     gap: 36px;
 }
 
+.planet-names-div{
+    display: none;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.planet-name{
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 2.27;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
 .filters{
     display: flex;
     justify-content: space-between;
@@ -20,6 +34,20 @@
     font-weight: bold;
     letter-spacing: 1.93px;
     color: #fff;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+.text-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .planetImg{
@@ -82,4 +110,105 @@ a{
     font-weight: 500;
     letter-spacing: -0.75px;
     color: #fff;
+}
+
+@media (min-width: 768px) {
+    .info{
+        flex-wrap: wrap;
+    }
+
+    .planet-names-div{
+        display: flex;
+        order: 1;
+    }
+
+    .content{
+        justify-content: center;
+        order: 2;
+    }
+
+    .planetImg{
+        width: 184px;
+        height: 184px;
+        margin-top: 100px;
+    }
+
+    .text-div{
+        width: 50%;
+    }
+
+    .filters{
+        order: 3;
+        border: none;
+    }
+
+    .containers{
+        order: 4;
+        flex-direction: row;
+    }
+
+    h2{
+        font-size: 48px;
+    }
+
+    .filter-text{
+        border: solid 1px #fff;
+        padding: 8px 50px;
+
+        line-height: 2.78;
+    }
+
+    .container{
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .numbers{
+        font-size: 24px;
+        letter-spacing: -0.9px;
+    }
+}
+
+@media screen and (min-width:1440px){
+    .planetImg{
+        width: 290px;
+        height: 290px;
+    }
+
+    .content{
+        flex-direction: row;
+    }
+
+    .description{
+        text-align: left;
+    }
+
+    .text-div{
+        align-items: baseline;
+        width: 30%;
+    }
+
+    h2{
+        font-size: 80px;
+    }
+
+    .description{
+        font-size: 14px;
+    }
+
+    .filter-text{
+        padding: 12px 70px;
+    }
+
+    .numbers{
+        font-size: 40px;
+    }
+
+    .container{
+        padding: 20px;
+    }
+
+    .text{
+        font-size: 11px;
+    }
 }
