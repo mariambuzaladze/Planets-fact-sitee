@@ -7,12 +7,13 @@ import Data from "./data.json";
 
 function App() {
 
-  const[planetClicked,setPlanetClicked] = useState(false);
+  const [planetClicked,setPlanetClicked] = useState(false);
+  const [description,setDescription] = useState("overview")
 
   return (
     <>
-    <Header setPlanetClicked={setPlanetClicked}/>
-    {planetClicked===false?<PlanetsList planets={Data} setPlanetClicked={setPlanetClicked}/>:<PlanetInfo planet={Data[planetClicked-1]}/>}
+    <Header setPlanetClicked={setPlanetClicked} planetClicked={planetClicked}/>
+    {planetClicked===false?<PlanetsList planets={Data} setPlanetClicked={setPlanetClicked}/>:<PlanetInfo planet={Data[planetClicked-1]} description={description} setDescription={setDescription}/>}
     
     
     {/* <PlanetInfo id={planetClicked} planets={Data}/> */}

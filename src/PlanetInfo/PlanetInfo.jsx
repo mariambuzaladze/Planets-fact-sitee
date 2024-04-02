@@ -1,18 +1,64 @@
 import "./planetInfo.css";
 import Source from "/images/icon-source.svg"
 
-export default function PlanetInfo({planet}){
+export default function PlanetInfo({planet,description,setDescription}){
+    const handleOverview = ()=>{
+        setDescription("overview")
+    }
+
+    const handleStructure = ()=>{
+        setDescription("structure")
+    }
+
+    const handleSurface = ()=>{
+        setDescription("surface")
+    }
+
+    const getDescription = () => {
+        switch (description) {
+            case "overview":
+                return planet.overview.content;
+            case "structure":
+                return planet.structure.content;
+            case "surface":
+                return planet.geology.content;
+        }
+    };
+
+    const getImage = () =>{
+        switch (description) {
+            case "overview":
+                return planet.images.planetImg;
+            case "structure":
+                return planet.images.internal;
+            case "surface":
+                return planet.images.geology;
+        }
+    }
+
+    const getSources = () => {
+        switch (description) {
+            case "overview":
+                return planet.overview.source;
+            case "structure":
+                return planet.structure.source;
+            case "surface":
+                return planet.geology.source;
+        }
+    }
+
+    
     return <div className="info">
         <div className="filters">
-            <p className="filter-text">OVERVIEW</p>
-            <p className="filter-text">STRUCTURE</p>
-            <p className="filter-text">SURFACE</p>
+            <p style={description==="overview"?{"borderBottom":"4px solid #419ebb"}:{}} onClick={handleOverview} className="filter-text">OVERVIEW</p>
+            <p style={description==="structure"?{"borderBottom":"4px solid #419ebb"}:{}} onClick={handleStructure}className="filter-text">STRUCTURE</p>
+            <p style={description==="surface"?{"borderBottom":"4px solid #419ebb"}:{}} onClick={handleSurface}className="filter-text">SURFACE</p>
         </div>
 
-        <img className="planetImg" src={planet.img} alt="planet image" />
+        <img className="planetImg" src={getImage()} alt="planet image" />
         <h2>{planet.name}</h2>
-        <p className="description">{planet.overview}</p>
-        <p className="source">Source : <a href="">Wikipedia</a><img src={Source} alt="icon source" /></p>
+        <p className="description">{getDescription()}</p>
+        <p className="source">Source : <a href={getSources()}>Wikipedia</a><img src={Source} alt="icon source" /></p>
 
          
         <div className="containers">
@@ -33,7 +79,7 @@ export default function PlanetInfo({planet}){
 
             <div className="container">
                 <p className="text">AVRAGE TEMP.</p>
-                <p className="numbers">{planet.temp}</p>
+                <p className="numbers">{planet.temperature}</p>
              </div>
         </div>
     </div>

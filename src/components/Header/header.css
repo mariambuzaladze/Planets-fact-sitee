@@ -17,4 +17,5 @@ h1{
 
 .hamburger{
     opacity: 0.25;
+    cursor: pointer;
 }
